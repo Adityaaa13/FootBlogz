@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>homepage</title>
+        <style>
+            body{
+                background: linear-gradient(179.4deg, rgb(12, 20, 69) -16.9%, rgb(71, 30, 84) 119.9%);
+            }
+            .navbar {
+  height: 80px;  /* Adjust as needed */
+  font-size: 20px;  /* Adjust as needed */
+}
+.navbar .nav-item {
+  padding: 0 10px;  /* Adjust as needed */
+}
+.navbar-brand {
+    font-size: 30px;
+    background-color: beige;
+    text-decoration: solid;
+    border-radius: 10px;
+     font-weight: bold;
+}
+
+    .nav-item .signin-link {
+      color: white;  /* Adjust as needed */
+      background-color: blue;  /* Adjust as needed */
+      padding: 10px 20px;  /* Adjust as needed */
+      /* Add more styles as needed */
+    }
+    .navbar{
+        background: linear-gradient(179.4deg, rgb(71, 82, 156) -16.9%, rgb(71, 30, 84) 119.9%);
+
+    }
+ 
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+
+        <div class="container mt-3">
+            <div class=" row row-cols-4">
+                <% blogs.forEach(blog=> { %>
+                    <div class="col">
+                        <div class="card col" style="width: 18rem;">
+                            <img src="<%= blog.coverImageURL %>" class="card-img-top" />
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= blog.title %>
+                                </h5>
+                                <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+
+        </div>
+        <%- include('./partials/script') %>
+
+</body>
+
+</html>

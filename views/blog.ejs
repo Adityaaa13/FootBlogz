@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>homepage</title>
+    <style>
+        body{
+            background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+
+    <div class="container mt-4">
+        <h1><%= blog.title  %></h1>
+        <img src="<%=blog.coverImageURL %>" width="700px">
+        <pre class="mt-3"><%= blog.body  %></pre>
+    </div>
+
+    <div class="container mt-4">
+        <img src="<%= blog.createdBy.profileImageURL %>" width="100px"><%= blog.createdBy.fullName %>
+    </div>
+
+    <div class="container mt-3">
+        <h1>Comment (<%= comments.length %>)</h1>
+        <% if (locals.user) { %>
+            <form action ="/blog/comment/<%= blog._id %>" method="POST">
+            
+
+                <div class="mb-3">
+                  <input type="text" class="form-control" name="content" placeholder="Enter your comment">
+                  <button class="btn btn-sm btn-primary" type="submit">Add</button>
+                </div>
+            </form>
+            
+        <% } %>
+        <div class="mt-3">
+            <% comments.forEach(comment => { %>
+             <div>
+                <img src="<%= comment.createdBy.profileImageURL %>" width="100px"><%= comment.createdBy.fullName %>
+                <pre><%= comment.content  %></pre>
+
+             </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <%- include('./partials/script') %>
+
+</body>
+</html>
