@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Edit blog</title>
+        <style>
+            body{
+                background-image: radial-gradient( circle farthest-corner at 48.4% 47.5%,  rgba(122,183,255,1) 0%, rgba(21,83,161,1) 90% );
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+        <div class="container4 mt-3">
+            <form action="/blog/edit/<%=blog._id%>" method="post" enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label for="coverImage" class="form-label">Cover Image</label>
+                    <input type="file" class="form-control" id="coverImage" name="coverImage"
+                        aria-describedby="coverImage">
+                </div>
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" aria-describedby="title"
+                        value="<%= blog.title %>">
+                </div>
+
+                <div class="mb-3">
+                    <label for="body">Body</label>
+                    <textarea name="body" class="form-control" id="body"><%= blog.body %></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <button class="btn btn-dark">Save</button>
+                </div>
+
+            </form>
+        </div>
+        <%- include('./partials/script') %>
+
+</body>
+
+</html>

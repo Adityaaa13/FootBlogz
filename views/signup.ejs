@@ -3,11 +3,18 @@
 <head>
     <%- include('./partials/head') %>
     <title>signup</title>
+    <style>
+     
+      body{
+        background-image: url("../images/reall.jpg");
+        background-size: cover;
+      }
+        </style>
 </head>
 <body>
     <%- include('./partials/nav') %>
 
-    <div class="container mt-4">
+    <div class="container2 mt-4">
         <form action ="/user/signup" method="post">
             <div class="mb-3">
                 <label for="fullName" class="form-label">Full Name</label>

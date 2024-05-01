@@ -23,6 +23,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
 app.use(checkForAuthenticationCookie("token"));
 app.use(express.static(path.resolve("./public")));//statically serve whats in the public folder
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views')); 
 
 app.get("/", async(req,res)=>{
     const allBlogs = await Blog.find({});
