@@ -1,0 +1,220 @@
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #f8f9fc;
+}
+
+footer {
+  color: #333;
+  background-color: white;
+}
+
+.row {
+  display: flex;
+  padding: 1rem;
+}
+
+.column {
+  width: calc(100% / 3);
+  padding: 0 0.9375rem;
+}
+
+h4 {
+  margin-bottom: 0.9375rem;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 0.625rem;
+}
+
+ul li a {
+  color: #333;
+  font-size: 1rem;
+  transition: 0.3s all ease;
+}
+
+ul li i {
+  color: rgb(63, 63, 63);
+}
+
+ul li a:hover {
+  color: rgb(63, 63, 63);
+  margin-left: 0.2rem;
+}
+
+ul.social-icons {
+  display: flex;
+  column-gap: 0.625rem;
+}
+
+.social-icons i {
+  color:rgb(63, 63, 63);
+}
+
+ul.social-icons li {
+  margin-bottom: 0rem;
+}
+
+ul.social-icons li a {
+  display: grid;
+  place-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  border: 1.5px solid rgb(63, 63, 63);
+}
+
+ul.social-icons li:hover a {
+  background-color:rgb(63, 63, 63);
+  animation: shake 0.3s ease;
+  margin-left: 0;
+}
+
+ul.social-icons li:hover i {
+  color: #fff;
+}
+
+.copyright {
+  text-align: center;
+  color: #fff;
+  background-color:rgb(63, 63, 63);
+  padding: 0.6rem 0;
+}
+
+/* Shake animation */
+@keyframes shake {
+      from,
+      to {
+        transform: scale(1, 1);
+      }
+      25% {
+        transform: scale(0.9, 1.1);
+      }
+      50% {
+        transform: scale(1.1, 0.9);
+      }
+      75% {
+        transform: scale(0.95, 1.05);
+      }
+    }
+
+
+/* Responsive adjustments for mobile version */
+@media screen and (max-width: 768px) {
+  .column {
+    margin: 0.4rem 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  h4 {
+    font-size: 1.3125rem;
+  }
+
+  p {
+    font-size: 0.9375rem;
+  }
+
+  ul li a {
+    font-size: 0.9375rem;
+  }
+
+  ul.social-icons li a {
+    width: 1.975rem;
+    height: 1.975rem;
+  }
+}
+
+</style>
+
+<footer>
+    <div class="row">
+      
+      <div class="column">
+        <h4>About Us</h4>
+        <p>Passionate platform for football enthusiasts, 
+            sharing insights, news, and stories, fostering a 
+            vibrant community around the beautiful game!!
+        </p>
+      </div>
+
+      <div class="column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li>
+            <a href="/">
+              <i class="fa fa-angle-right"></i> 
+              Home</a>
+          </li>
+          <li>
+            <a href="/user/signup">
+              <i class="fa fa-angle-right"></i> 
+              SignUp</a>
+          </li>
+          <li>
+            <a href="/user/signin">
+              <i class="fa fa-angle-right"></i> 
+              SignIn
+              </a>
+           </li>
+        </ul>
+      </div>
+
+      <div class="column">
+        <h4>Connect with Us</h4>
+        <ul class="social-icons">
+          <li>
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+           </li>
+           <li>
+             <a href="#">
+               <i class="fab fa-github"></i>
+             </a>
+           </li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="copyright">© 2023 All Rights Reserved</p>
+  </footer>

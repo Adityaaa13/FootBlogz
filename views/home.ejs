@@ -3,7 +3,9 @@
 
 <head>
   <%- include('./partials/head') %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>homepage</title>
+    
     <style>
       body{
         background-image: url("../images/backkmain.jpg");
@@ -25,6 +27,9 @@
         justify-content: centre;
 
       }
+
+
+
     </style>
 </head>
 
@@ -42,6 +47,9 @@
           </div>
           <div class="carousel-item" data-interval="100">
             <img src="../images/manu.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-interval="100">
+            <img src="../images/arg1.jpg" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
@@ -76,6 +84,8 @@
       </div>
 
     </div>
+    <%- include('./partials/footer') %>
+
     <%- include('./partials/script') %>
 
 </body>

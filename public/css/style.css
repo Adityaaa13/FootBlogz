@@ -11,7 +11,7 @@ body {
 
 .navbar .nav-item {
     padding: 0 10px;
-    /* Adjust as needed */
+    
 }
 
 .navbar-brand {
@@ -22,6 +22,11 @@ body {
     font-weight: bold;
     margin-right: 50%;
     margin-left: 5%;
+}
+
+.navbar-brand:hover{
+    font-weight:bold;
+    font-size: 40px;
 }
 
 .nav-item .signin-link {
