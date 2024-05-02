@@ -8,7 +8,7 @@ const Comment = require("../models/comment");
 
 const router = Router();
 
-
+//uploading the images in blogs
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.resolve(`./public/uploads/`));
@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
   });
   const upload = multer({ storage: storage });
 
-
+//
 router.get('/add-new',(req,res)=>{
     return res.render('addBlog',{
         user:req.user,
@@ -40,6 +40,7 @@ router.get('/edit/:id', async (req, res) => {
   });
 });
 
+//posting edited blog
 router.post('/edit/:id', upload.single('coverImage'), async (req, res) => {
   const { title, body} = req.body;
   const blog = await Blog.findById(req.params.id);
@@ -54,9 +55,7 @@ router.post('/edit/:id', upload.single('coverImage'), async (req, res) => {
   if (req.file) {
     blog.coverImageURL = `/uploads/${req.file.filename}`;
   }
-
   await blog.save();
-
   return res.redirect(`/blog/${blog._id}`);
 });
 
@@ -97,6 +96,7 @@ router.post("/comment/:blogId", async (req, res) => {
   });
   return res.redirect(`/blog/${req.params.blogId}`);
 });
+
 
 router.post("/", upload.single("coverImage"), async (req, res) => {
   const { title, body } = req.body;
